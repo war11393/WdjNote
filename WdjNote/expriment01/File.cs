@@ -5,7 +5,8 @@ namespace WdjNote_01
 {
     class MyFile
     {
-        string _name;//路径(包含分类名)+文件名
+        string _path;//路径(包含分类名)
+        string _name;//文件名
         string _content;//文件内容
 
         public string Name {
@@ -15,6 +16,12 @@ namespace WdjNote_01
         public string Content {
             get { return _content; }
             set { _content = value; }
+        }
+
+        public string Path
+        {
+            get { return _path; }
+            set { _path = value; }
         }
     }
 
@@ -34,7 +41,11 @@ namespace WdjNote_01
         //将文件类f保存
         public static void SaveFile(MyFile f)
         {
-            FileStream fs = new FileStream(f.Name, FileMode.Create);
+            if (Directory.Exists(f.Path) == false)//如果不存在就创建file文件夹
+            {
+                Directory.CreateDirectory(f.Path);
+            }
+            FileStream fs = new FileStream(f.Path + "\\" + f.Name, FileMode.Create);
             StreamWriter sw = new StreamWriter(fs);
             sw.Write(f.Content);
             sw.Flush();

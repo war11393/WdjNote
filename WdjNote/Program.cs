@@ -17,10 +17,12 @@ namespace WdjNote_01
             switch(i)
             {
                 case 1: 
-                    Show01.CreateFileMenu();
+                    MyFile f = Show01.CreateFileMenu();
+                    FileOperate.SaveFile(f);
                     break;
                 case 2:
-                    Show01.OpenFileMenu();
+                    string s = Show01.OpenFileMenu();
+                    FileOperate.OpenFile(s);
                     break;
             }
 

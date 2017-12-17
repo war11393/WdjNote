@@ -19,20 +19,33 @@ namespace WdjNote_01.expriment1
             return path;
         }
 
-        public static File CreateFileMenu()
+        public static MyFile CreateFileMenu()
         {
-            File file = new File();
+            MyFile file = new MyFile();
+
             Console.WriteLine("请输入笔记名：");
             string name = Console.ReadLine() + ".txt";
-            Console.WriteLine("请输入存储路径：(示例：C:\\Users\\11393\\Desktop\\C#)");
-            string path = Console.ReadLine() + "\\";
+
+            //Console.WriteLine("请输入存储路径：(示例：C:\\Users\\11393\\Desktop\\C#)");
+            //string path = Console.ReadLine() + "\\";
+
             Console.WriteLine("请输入文件分类：");
             Category category = new Category();
-            category.ShowCategory(path);
-            Console.WriteLine("请输入笔记内容：(以#号键结束)");
-            string content = Console.ReadLine();//这里应该读取全部内容
+            string pa = category.ShowCategory("D:\\");
 
-            //file.Cid = cid;file.Name = path + name;file.Content = content;
+            Console.WriteLine("请输入笔记内容：(以#号键结束)");
+            string content = "";
+            string s = Console.ReadLine();
+            
+            while (!s.Equals("#"))
+            {
+                content += s;
+                s = Console.ReadLine();
+            }
+
+            file.Path = pa;
+            file.Name = name;
+            file.Content = content;
 
             return file;
         }

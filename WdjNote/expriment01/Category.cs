@@ -12,9 +12,9 @@ namespace WdjNote_01
 
         public Category()
         {
-            init();
+            Init();
         }
-        public  void init()
+        public  void Init()
         {
             notelist = new List<string>();
             notelist.Add("我的笔记");
@@ -46,14 +46,16 @@ namespace WdjNote_01
             if (id == i)
             {
                 System.Console.WriteLine("请输入要创建的分类名：");
-                path = path+"//"+System.Console.ReadLine();
+                string p = System.Console.ReadLine();
+                path = path+ p;
+                notelist.Add(p);
             }else if(id>i)
             {
                 System.Console.WriteLine("输入错误");
-                return path +"//"+ notelist[0];
+                return path + notelist[0];
             }else
             {
-                path = path + "//" + notelist[id - 1];
+                path = path + notelist[id - 1];
             }
             System.Console.WriteLine(path);
             return path;
