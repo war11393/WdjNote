@@ -43,7 +43,6 @@ namespace WdjNote_01
             {
                 path = path + notelist[id - 1];
             }
-            System.Console.WriteLine(path);
             return path;
         }
     }
