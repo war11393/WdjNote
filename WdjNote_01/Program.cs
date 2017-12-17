@@ -10,6 +10,7 @@ namespace WdjNote_01
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("你好");
         }
     }
 }
