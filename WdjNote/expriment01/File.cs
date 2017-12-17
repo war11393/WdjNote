@@ -1,9 +1,10 @@
 ﻿using System;
 using System.IO;
+using WdjNote.impl;
 
 namespace WdjNote_01
 {
-    class MyFile
+    public class MyFile
     {
         string _path;//路径(包含分类名)
         string _name;//文件名
@@ -25,10 +26,10 @@ namespace WdjNote_01
         }
     }
 
-    class FileOperate
+    class FileOperate : IFileOperate
     {
         //这里调用读取分类的方法将打开的文件中的分类值读出来，没有就返回0--默认分类
-        public static void OpenFile(string path)
+        public void OpenFile(string path)
         {
             StreamReader sr = new StreamReader(path);
             string line;
@@ -38,8 +39,19 @@ namespace WdjNote_01
             }
         }
 
+        public string OpenFileToString(string path)
+        {
+            StreamReader sr = new StreamReader(path);
+            string line, s = "";
+            while ((line = sr.ReadLine()) != null)
+            {
+                s += line;
+            }
+            return s;
+        }
+
         //将文件类f保存
-        public static void SaveFile(MyFile f)
+        public  void SaveFile(MyFile f)
         {
             if (Directory.Exists(f.Path) == false)//如果不存在就创建file文件夹
             {
@@ -53,7 +65,7 @@ namespace WdjNote_01
         }
 
         //修改文件分类
-        public static void UpdateFileCategory(MyFile f, string newpath)
+        public  void UpdateFileCategory(MyFile f, string newpath)
         {
             File.Move(f.Name, newpath);
         }
