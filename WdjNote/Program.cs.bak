@@ -12,6 +12,7 @@ namespace WdjNote_01
         [STAThread]
         static void Main(string[] args)
         {
+<<<<<<< Updated upstream
             //string s = "!";
             //while(s.Equals("y") || s.Equals("Y"))
             //{
@@ -26,6 +27,15 @@ namespace WdjNote_01
             f.of += fileOperate.OpenFileToString;
             f.sf += fileOperate.SaveFile;
             Application.Run(f);
+=======
+            string s = "y";
+            while(s.Equals("y") || s.Equals("Y"))
+            {
+                ShowExperiment2();
+                Console.WriteLine("是否继续？(y或Y继续，其他键退出)");
+                s = Console.ReadLine();
+            }
+>>>>>>> Stashed changes
         }
         
         //展示实验二菜单
