@@ -42,6 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Compile Include="expriment01\Category.cs" />
+    <Compile Include="expriment01\File.cs" />
+    <Compile Include="expriment01\Show01.cs" />
+>>>>>>> 896e26597f5ffebcbe46d631033b9ce0c3ca2317
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
