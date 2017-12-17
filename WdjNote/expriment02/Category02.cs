@@ -10,15 +10,15 @@ namespace WdjNote.expriment02
     class Category02 : Category
     {
         //添加新的分类
-        public static void AddCategory(string name)
+        public  void AddCategory(string name)
         {
-
+            notelist.Add(name);
         }
 
         //删除已有分类
-        public static void DeleteCategory(int id)
+        public void DeleteCategory(string name)
         {
-
+            notelist.Remove(name);
         }
     }
 }
