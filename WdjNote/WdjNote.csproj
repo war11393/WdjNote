@@ -45,6 +45,7 @@
     <Compile Include="expriment01\File.cs" />
     <Compile Include="expriment01\Show01.cs" />
     <Compile Include="expriment02\Category02.cs" />
+    <Compile Include="expriment02\FileOprate02.cs" />
     <Compile Include="expriment02\Show02.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

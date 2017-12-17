@@ -23,9 +23,6 @@ namespace WdjNote.expriment02
             Console.WriteLine(" ***************************************************************");
         }
 
-        public static void DeleteFile(string path)
-        {
-
-        }
+        
     }
 }

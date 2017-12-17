@@ -11,7 +11,7 @@ namespace WdjNote_01
         {
             Init();
         }
-        public  void Init()
+        public void Init()
         {
             notelist = new List<string>();
             notelist.Add("我的笔记");
@@ -43,7 +43,6 @@ namespace WdjNote_01
             {
                 path = path + notelist[id - 1];
             }
-            System.Console.WriteLine(path);
             return path;
         }
     }

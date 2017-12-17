@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using WdjNote.expriment02;
 using WdjNote_01.expriment1;
-
 
 namespace WdjNote_01
 {
@@ -12,11 +8,66 @@ namespace WdjNote_01
     {
         static void Main(string[] args)
         {
+            string s = "!";
+            while(s.Equals("y") || s.Equals("Y"))
+            {
+                ShowExperiment2();
+                Console.WriteLine("是否继续？(y或Y继续，其他键退出)");
+                s = Console.ReadLine();
+            }
+        }
+
+        //展示实验二菜单
+        private static void ShowExperiment2()
+        {
+            Show02.ShowMainMenu();
+            int i = int.Parse(System.Console.ReadLine());
+            switch (i)
+            {
+                case 1:
+                    MyFile f = Show02.CreateFileMenu();
+                    FileOperate.SaveFile(f);
+                    break;
+                case 2:
+                    string s = Show02.OpenFileMenu();
+                    FileOperate.OpenFile(s);
+                    break;
+                case 3:
+                    Console.WriteLine("请输入删除路径：");
+                    string deletepath = Console.ReadLine();
+                    FileOprate02.DeleteFile(deletepath);
+                    break;
+                case 4:
+                    Show02.ShowCategoryMenu();
+                    int j = int.Parse(System.Console.ReadLine());
+                    Category02 category = new Category02();
+                    if (j == 1)
+                    {
+                        Console.WriteLine("请输入新的分类名：");
+                        string newcate = Console.ReadLine();
+                    } else
+                    {
+                        Console.WriteLine("请输入要删除的分类名：");
+                        string deletecate = Console.ReadLine();
+                    }
+                    break;
+                case 5:
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("请输入正确指令！");
+                    break;
+            }
+        }
+
+        //展示实验一菜单
+        private static void ShowExperiment1()
+        {
             Show01.ShowMainMenu();
             int i = int.Parse(System.Console.ReadLine());
-            switch(i)
+            switch (i)
             {
-                case 1: 
+                case 1:
                     MyFile f = Show01.CreateFileMenu();
                     FileOperate.SaveFile(f);
                     break;
@@ -24,8 +75,10 @@ namespace WdjNote_01
                     string s = Show01.OpenFileMenu();
                     FileOperate.OpenFile(s);
                     break;
+                default:
+                    Console.WriteLine("请输入正确指令！");
+                    break;
             }
-
         }
     }
 }
