@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WdjNote_01.expriment1;
 
 namespace WdjNote_01
 {
@@ -10,7 +11,7 @@ namespace WdjNote_01
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("你好");
+            Show01.ShowMainMenu();
         }
     }
 }
