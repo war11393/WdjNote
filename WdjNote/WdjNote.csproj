@@ -59,10 +59,10 @@
     <Compile Include="expriment03\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-<<<<<<< Updated upstream
+
     <Compile Include="impl\IFileOperate.cs" />
-=======
->>>>>>> Stashed changes
+
+
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
