@@ -60,7 +60,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
 
+
     <Compile Include="impl\IFileOperate.cs" />
+
 
 
     <Compile Include="Program.cs" />

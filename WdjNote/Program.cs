@@ -12,8 +12,8 @@ namespace WdjNote_01
         [STAThread]
         static void Main(string[] args)
         {
-            //string s = "!";
-            //while(s.Equals("y") || s.Equals("Y"))
+            //string s = "y";
+            //while (s.Equals("y") || s.Equals("Y"))
             //{
             //    ShowExperiment2();
             //    Console.WriteLine("是否继续？(y或Y继续，其他键退出)");
