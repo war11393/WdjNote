@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using Control;
 using Model;
+using Control;
+using Interface;
 
 namespace WdjNote
 {
