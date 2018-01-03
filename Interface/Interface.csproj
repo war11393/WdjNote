@@ -43,7 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICategoryOperate.cs" />
     <Compile Include="IFileOperate.cs" />
+    <Compile Include="ISQLCategoryOperate.cs" />
+    <Compile Include="ISQLFileOperate.cs" />
+    <Compile Include="IUserOperate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
