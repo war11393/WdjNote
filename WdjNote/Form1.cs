@@ -116,5 +116,13 @@ namespace WdjNote
         {
              
         }
+<<<<<<< HEAD
+
+        private void tssWdj2_Click(object sender, EventArgs e)
+        {
+
+        }
+=======
+>>>>>>> 79a961b16b97b3a97aaceabfaf4f5ddc10b55aae
     }
 }
