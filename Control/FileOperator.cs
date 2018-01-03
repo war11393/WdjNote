@@ -46,7 +46,7 @@ namespace Control
         //修改文件分类
         public void UpdateFileCategory(MyFile f, string newpath)
         {
-            File.Move(f.Name, newpath);
+            File.Move(f.Path + "\\" + f.Name, newpath);
         }
     }
 }

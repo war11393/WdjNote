@@ -1,6 +1,6 @@
-﻿namespace Model
+﻿namespace Control
 {
-    public class Category02 : Category
+    public class CategoryOperate02 : CategoryOperate
     {
         //添加新的分类
         public  void AddCategory(string name)
