@@ -1,7 +1,6 @@
 ﻿using System;
-using WdjNote_01.expriment1;
 
-namespace WdjNote.expriment02
+namespace WdjNote
 {
     class Show02 : Show01
     {

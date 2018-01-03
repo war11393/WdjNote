@@ -1,24 +1,15 @@
 ﻿using System;
-using WdjNote.expriment02;
-using WdjNote_01.expriment1;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WdjNote.expriment03;
-namespace WdjNote_01
+using Control;
+using Model;
+
+namespace WdjNote
 {
     class Program
     {
         [STAThread]
         static void Main(string[] args)
         {
-            //string s = "y";
-            //while (s.Equals("y") || s.Equals("Y"))
-            //{
-            //    ShowExperiment2();
-            //    Console.WriteLine("是否继续？(y或Y继续，其他键退出)");
-            //    s = Console.ReadLine();
-            //}
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Form1 f = new Form1();

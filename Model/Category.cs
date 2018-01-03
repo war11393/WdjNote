@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace WdjNote_01
+namespace Model
 {
-    class Category
+    public class Category
     {
         public List<string> notelist;
 

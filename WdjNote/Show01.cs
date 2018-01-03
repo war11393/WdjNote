@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Model;
+using System;
 
-namespace WdjNote_01.expriment1
+namespace WdjNote
 {
     class Show01
     {

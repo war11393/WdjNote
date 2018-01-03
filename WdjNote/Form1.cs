@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using WdjNote_01;
-using WdjNote.expriment02;
 using Microsoft.VisualBasic;
-namespace WdjNote.expriment03
+using Model;
+
+namespace WdjNote
 {
     public partial class Form1 : Form
     {

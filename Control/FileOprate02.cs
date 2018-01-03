@@ -1,9 +1,8 @@
 ﻿using System.IO;
-using WdjNote_01;
 
-namespace WdjNote.expriment02
+namespace Control
 {
-    class FileOprate02 : FileOperate
+    public class FileOprate02 : FileOperate
     {
         public static void DeleteFile(string path)
         {
