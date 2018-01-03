@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,8 +65,6 @@
     <Compile Include="register.Designer.cs">
       <DependentUpon>register.cs</DependentUpon>
     </Compile>
-=======
->>>>>>> 79a961b16b97b3a97aaceabfaf4f5ddc10b55aae
     <Compile Include="Show01.cs" />
     <Compile Include="Show02.cs" />
     <Compile Include="Form1.cs">
@@ -86,7 +83,6 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,35 +93,27 @@
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
     </EmbeddedResource>
-=======
->>>>>>> 79a961b16b97b3a97aaceabfaf4f5ddc10b55aae
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Control\Control.csproj">
       <Project>{04de4e86-794b-4a09-a2fa-2f491ac38704}</Project>
       <Name>Control</Name>
     </ProjectReference>
-<<<<<<< HEAD
     <ProjectReference Include="..\Interface\Interface.csproj">
       <Project>{398370f1-6cef-4dbd-a1f3-d33151f0b4eb}</Project>
       <Name>Interface</Name>
     </ProjectReference>
-=======
->>>>>>> 79a961b16b97b3a97aaceabfaf4f5ddc10b55aae
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{1e8be1f7-34bb-4561-a23d-0e510a5f5bab}</Project>
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
-<<<<<<< HEAD
   <ItemGroup>
     <None Include="Resources\timg.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\86.jpg" />
   </ItemGroup>
-=======
->>>>>>> 79a961b16b97b3a97aaceabfaf4f5ddc10b55aae
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

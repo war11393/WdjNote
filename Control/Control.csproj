@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryOperate.cs" />
+    <Compile Include="CategoryOperate02.cs" />
     <Compile Include="FileOperator.cs" />
     <Compile Include="FileOprate02.cs" />
     <Compile Include="Program.cs" />
