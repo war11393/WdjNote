@@ -87,6 +87,7 @@
             this.btn_regist.TabIndex = 5;
             this.btn_regist.Text = "注册";
             this.btn_regist.UseVisualStyleBackColor = true;
+            this.btn_regist.Click += new System.EventHandler(this.btn_regist_Click);
             // 
             // pictureBox1
             // 

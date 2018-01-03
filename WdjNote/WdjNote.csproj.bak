@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +84,7 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +101,7 @@
       <Project>{04de4e86-794b-4a09-a2fa-2f491ac38704}</Project>
       <Name>Control</Name>
     </ProjectReference>
+<<<<<<< HEAD
     <ProjectReference Include="..\Interface\Interface.csproj">
       <Project>{398370f1-6cef-4dbd-a1f3-d33151f0b4eb}</Project>
       <Name>Interface</Name>
@@ -108,6 +111,7 @@
       <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <None Include="Resources\timg.jpg" />
   </ItemGroup>
