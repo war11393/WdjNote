@@ -16,5 +16,10 @@ namespace WdjNote
         {
             InitializeComponent();
         }
+
+        private void btn_regist_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

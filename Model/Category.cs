@@ -21,6 +21,8 @@ namespace Model
             _cuno = cuno;
             _cname = cname;
         }
+        public Category()
+        { }
 
         public int Cno
         {
