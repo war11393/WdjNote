@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
-<<<<<<< HEAD
 using Model;
 using Control;
 using Interface;
-=======
-using Control;
 using Model;
->>>>>>> 79a961b16b97b3a97aaceabfaf4f5ddc10b55aae
-
 namespace WdjNote
 {
     class Program
@@ -19,7 +14,7 @@ namespace WdjNote
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Form1 f = new Form1();
-            FileOprate02 fileOperate = new FileOprate02();
+           FileOperator fileOperate = new FileOprator();
             f.of += fileOperate.OpenFileToString;
             f.sf += fileOperate.SaveFile;
             Application.Run(f);
