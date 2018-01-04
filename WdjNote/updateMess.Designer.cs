@@ -78,6 +78,7 @@
             // 
             this.tb_password.Location = new System.Drawing.Point(130, 104);
             this.tb_password.Name = "tb_password";
+            this.tb_password.PasswordChar = '*';
             this.tb_password.Size = new System.Drawing.Size(100, 21);
             this.tb_password.TabIndex = 4;
             // 
@@ -96,6 +97,7 @@
             this.btn_sure.TabIndex = 6;
             this.btn_sure.Text = "确定";
             this.btn_sure.UseVisualStyleBackColor = true;
+            this.btn_sure.Click += new System.EventHandler(this.btn_sure_Click);
             // 
             // btn_cancel
             // 
@@ -119,6 +121,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "updateMess";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
