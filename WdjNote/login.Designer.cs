@@ -113,6 +113,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.password);
             this.Controls.Add(this.username);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "login";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -71,7 +71,7 @@ namespace Control
             {
                 Directory.CreateDirectory(f.Path);
             }
-            FileStream fs = new FileStream(f.Path + "\\" + f.Name, FileMode.Create);
+            FileStream fs = new FileStream(f.Path + f.Name, FileMode.Create);
             StreamWriter sw = new StreamWriter(fs);
             sw.Write(f.Content);
             sw.Flush();

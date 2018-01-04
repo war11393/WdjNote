@@ -33,6 +33,7 @@
             this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.打开文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.保存文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.上传到云端ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.格式ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修改格式ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +55,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_pre_username = new System.Windows.Forms.Label();
             this.lb_pre_user = new System.Windows.Forms.Label();
+            this.新建文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.stsWdj.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -78,8 +80,10 @@
             // 文件ToolStripMenuItem
             // 
             this.文件ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.新建文件ToolStripMenuItem,
             this.打开文件ToolStripMenuItem,
-            this.保存文件ToolStripMenuItem});
+            this.保存文件ToolStripMenuItem,
+            this.上传到云端ToolStripMenuItem});
             this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
             this.文件ToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.文件ToolStripMenuItem.Text = "文件";
@@ -87,16 +91,23 @@
             // 打开文件ToolStripMenuItem
             // 
             this.打开文件ToolStripMenuItem.Name = "打开文件ToolStripMenuItem";
-            this.打开文件ToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
+            this.打开文件ToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
             this.打开文件ToolStripMenuItem.Text = "打开文件";
             this.打开文件ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // 保存文件ToolStripMenuItem
             // 
             this.保存文件ToolStripMenuItem.Name = "保存文件ToolStripMenuItem";
-            this.保存文件ToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
+            this.保存文件ToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
             this.保存文件ToolStripMenuItem.Text = "保存文件";
             this.保存文件ToolStripMenuItem.Click += new System.EventHandler(this.保存文件ToolStripMenuItem_Click);
+            // 
+            // 上传到云端ToolStripMenuItem
+            // 
+            this.上传到云端ToolStripMenuItem.Name = "上传到云端ToolStripMenuItem";
+            this.上传到云端ToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.上传到云端ToolStripMenuItem.Text = "上传到云端";
+            this.上传到云端ToolStripMenuItem.Click += new System.EventHandler(this.上传到云端ToolStripMenuItem_Click);
             // 
             // 格式ToolStripMenuItem
             // 
@@ -158,7 +169,6 @@
             this.rtbWdj.Size = new System.Drawing.Size(695, 502);
             this.rtbWdj.TabIndex = 1;
             this.rtbWdj.Text = "";
-            this.rtbWdj.TextChanged += new System.EventHandler(this.rtbWdj_TextChanged);
             // 
             // stsWdj
             // 
@@ -175,7 +185,7 @@
             // 
             // tssWdj1
             // 
-            this.tssWdj1.Margin = new System.Windows.Forms.Padding(80, 3, 0, 2);
+            this.tssWdj1.Margin = new System.Windows.Forms.Padding(13, 3, 220, 2);
             this.tssWdj1.Name = "tssWdj1";
             this.tssWdj1.Size = new System.Drawing.Size(37, 20);
             this.tssWdj1.Text = "就绪";
@@ -186,7 +196,6 @@
             this.tssWdj2.Name = "tssWdj2";
             this.tssWdj2.Size = new System.Drawing.Size(107, 20);
             this.tssWdj2.Text = "显示日期、时间";
-            this.tssWdj2.Click += new System.EventHandler(this.tssWdj2_Click);
             // 
             // ofdWdj
             // 
@@ -200,6 +209,7 @@
             // 
             // comboWdj
             // 
+            this.comboWdj.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboWdj.FormattingEnabled = true;
             this.comboWdj.Location = new System.Drawing.Point(413, 7);
             this.comboWdj.Name = "comboWdj";
@@ -221,8 +231,10 @@
             // 
             this.treeView1.Location = new System.Drawing.Point(14, 38);
             this.treeView1.Name = "treeView1";
+            this.treeView1.ShowPlusMinus = false;
             this.treeView1.Size = new System.Drawing.Size(149, 502);
             this.treeView1.TabIndex = 5;
+            this.treeView1.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseDoubleClick);
             // 
             // panel1
             // 
@@ -237,7 +249,7 @@
             // lb_pre_username
             // 
             this.lb_pre_username.AutoSize = true;
-            this.lb_pre_username.Location = new System.Drawing.Point(136, 10);
+            this.lb_pre_username.Location = new System.Drawing.Point(112, 10);
             this.lb_pre_username.Name = "lb_pre_username";
             this.lb_pre_username.Size = new System.Drawing.Size(49, 14);
             this.lb_pre_username.TabIndex = 1;
@@ -252,6 +264,13 @@
             this.lb_pre_user.TabIndex = 0;
             this.lb_pre_user.Text = "当前用户：";
             // 
+            // 新建文件ToolStripMenuItem
+            // 
+            this.新建文件ToolStripMenuItem.Name = "新建文件ToolStripMenuItem";
+            this.新建文件ToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.新建文件ToolStripMenuItem.Text = "新建文件";
+            this.新建文件ToolStripMenuItem.Click += new System.EventHandler(this.新建文件ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -265,9 +284,12 @@
             this.Controls.Add(this.rtbWdj);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "豌豆荚记事本";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -308,5 +330,7 @@
         private System.Windows.Forms.Label lb_pre_user;
         private System.Windows.Forms.ToolStripMenuItem 用户ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 修改信息ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 上传到云端ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 新建文件ToolStripMenuItem;
     }
 }

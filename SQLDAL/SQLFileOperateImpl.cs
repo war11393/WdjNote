@@ -25,7 +25,7 @@ namespace SQLDAL
 
         public List<SFile> ReadFileByCno(int cno, int uno)
         {
-            string sql = "select * from userfile where cno = " + cno + "and uno = " + uno;
+            string sql = "select * from userfile where fcno='" + cno + "'and funo='" + uno + "'";
             DataTable dt = SQLOperate.QueryTable(sql);
 
             List<SFile> sfList = new List<SFile>();
@@ -50,13 +50,13 @@ namespace SQLDAL
 
         public int DeleteFile(int fno)
         {
-            string sql = "delete userfile where fno = " + fno;
+            string sql = "delete userfile where fno = '" + fno + "'";
             return SQLOperate.ExecuteSql(sql);
         }
 
         public MyFile SFileToMyFile(SFile sf, string username)
         {
-            string sql = "select * from cate where cno = " + sf.Fcno;
+            string sql = "select * from cate where cno = '" + sf.Fcno + "'";
             string cateName = SQLOperate.QueryTable(sql).Rows[0][2].ToString().Trim();
 
             MyFile mf = new MyFile();
