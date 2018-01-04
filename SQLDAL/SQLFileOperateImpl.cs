@@ -6,7 +6,7 @@ using System;
 
 namespace SQLDAL
 {
-    class SQLFileOperateImpl : ISQLFileOperate
+   public  class SQLFileOperateImpl : ISQLFileOperate
     {
         public SFile OpenFile(int fno)
         {

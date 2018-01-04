@@ -5,7 +5,7 @@ using Model;
 
 namespace SQLDAL
 {
-    class UserOperateImpl : IUserOperate
+   public  class UserOperateImpl : IUserOperate
     {
         public User FindUserByUsername(string name)
         {

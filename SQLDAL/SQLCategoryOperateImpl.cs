@@ -6,7 +6,7 @@ using System;
 
 namespace SQLDAL
 {
-    class SQLCategoryOperateImpl : ISQLCategoryOperate
+    public class SQLCategoryOperateImpl : ISQLCategoryOperate
     {
         public void AddCategory(int uno, string name)
         {
