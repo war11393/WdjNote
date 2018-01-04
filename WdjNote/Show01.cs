@@ -32,7 +32,7 @@ namespace WdjNote
 
             Console.WriteLine("请输入文件分类：");
             Category category = new Category();
-            string pa = category.ShowCategory("D:\\");
+            //string pa = category.ShowCategory("D:\\");
 
             Console.WriteLine("请输入笔记内容：(以#号键结束)");
             string content = "";
@@ -44,7 +44,7 @@ namespace WdjNote
                 s = Console.ReadLine();
             }
 
-            file.Path = pa;
+            //file.Path = pa;
             file.Name = name;
             file.Content = content;
 

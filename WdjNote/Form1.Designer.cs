@@ -50,13 +50,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lb_pre_user = new System.Windows.Forms.Label();
             this.lb_pre_username = new System.Windows.Forms.Label();
+            this.lb_pre_user = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.stsWdj.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.stsWdj.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -68,7 +66,6 @@
             this.帮助ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(737, 25);
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(860, 28);
             this.menuStrip1.TabIndex = 0;
@@ -80,14 +77,12 @@
             this.打开文件ToolStripMenuItem,
             this.保存文件ToolStripMenuItem});
             this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
-            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.文件ToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.文件ToolStripMenuItem.Text = "文件";
             // 
             // 打开文件ToolStripMenuItem
             // 
             this.打开文件ToolStripMenuItem.Name = "打开文件ToolStripMenuItem";
-            this.打开文件ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.打开文件ToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
             this.打开文件ToolStripMenuItem.Text = "打开文件";
             this.打开文件ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
@@ -95,7 +90,6 @@
             // 保存文件ToolStripMenuItem
             // 
             this.保存文件ToolStripMenuItem.Name = "保存文件ToolStripMenuItem";
-            this.保存文件ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.保存文件ToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
             this.保存文件ToolStripMenuItem.Text = "保存文件";
             this.保存文件ToolStripMenuItem.Click += new System.EventHandler(this.保存文件ToolStripMenuItem_Click);
@@ -105,14 +99,12 @@
             this.格式ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.修改格式ToolStripMenuItem});
             this.格式ToolStripMenuItem.Name = "格式ToolStripMenuItem";
-            this.格式ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.格式ToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.格式ToolStripMenuItem.Text = "格式";
             // 
             // 修改格式ToolStripMenuItem
             // 
             this.修改格式ToolStripMenuItem.Name = "修改格式ToolStripMenuItem";
-            this.修改格式ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.修改格式ToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
             this.修改格式ToolStripMenuItem.Text = "修改格式";
             this.修改格式ToolStripMenuItem.Click += new System.EventHandler(this.修改格式ToolStripMenuItem_Click);
@@ -123,21 +115,18 @@
             this.团队介绍ToolStripMenuItem,
             this.软件版本ToolStripMenuItem});
             this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.帮助ToolStripMenuItem.Text = "帮助";
             // 
             // 团队介绍ToolStripMenuItem
             // 
             this.团队介绍ToolStripMenuItem.Name = "团队介绍ToolStripMenuItem";
-            this.团队介绍ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.团队介绍ToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
             this.团队介绍ToolStripMenuItem.Text = "团队介绍";
             // 
             // 软件版本ToolStripMenuItem
             // 
             this.软件版本ToolStripMenuItem.Name = "软件版本ToolStripMenuItem";
-            this.软件版本ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.软件版本ToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
             this.软件版本ToolStripMenuItem.Text = "软件版本";
             // 
@@ -146,9 +135,6 @@
             this.rtbWdj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbWdj.Location = new System.Drawing.Point(167, 28);
-            this.rtbWdj.Name = "rtbWdj";
-            this.rtbWdj.Size = new System.Drawing.Size(555, 471);
             this.rtbWdj.Location = new System.Drawing.Point(0, 30);
             this.rtbWdj.Name = "rtbWdj";
             this.rtbWdj.Size = new System.Drawing.Size(859, 510);
@@ -162,9 +148,6 @@
             this.stsWdj.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tssWdj1,
             this.tssWdj2});
-            this.stsWdj.Location = new System.Drawing.Point(0, 502);
-            this.stsWdj.Name = "stsWdj";
-            this.stsWdj.Size = new System.Drawing.Size(737, 22);
             this.stsWdj.Location = new System.Drawing.Point(0, 543);
             this.stsWdj.Name = "stsWdj";
             this.stsWdj.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
@@ -176,22 +159,16 @@
             // 
             this.tssWdj1.Margin = new System.Windows.Forms.Padding(80, 3, 0, 2);
             this.tssWdj1.Name = "tssWdj1";
-            this.tssWdj1.Size = new System.Drawing.Size(32, 17);
-            this.tssWdj1.Name = "tssWdj1";
             this.tssWdj1.Size = new System.Drawing.Size(37, 20);
             this.tssWdj1.Text = "就绪";
             // 
             // tssWdj2
             // 
-            this.tssWdj2.Margin = new System.Windows.Forms.Padding(300, 3, 0, 2);
-            this.tssWdj2.Name = "tssWdj2";
-            this.tssWdj2.Size = new System.Drawing.Size(92, 17);
-            this.tssWdj2.Text = "显示日期、时间";
-            this.tssWdj2.Click += new System.EventHandler(this.tssWdj2_Click);
             this.tssWdj2.Margin = new System.Windows.Forms.Padding(400, 3, 0, 2);
             this.tssWdj2.Name = "tssWdj2";
             this.tssWdj2.Size = new System.Drawing.Size(107, 20);
             this.tssWdj2.Text = "显示日期、时间";
+            this.tssWdj2.Click += new System.EventHandler(this.tssWdj2_Click);
             // 
             // ofdWdj
             // 
@@ -206,9 +183,6 @@
             // comboWdj
             // 
             this.comboWdj.FormattingEnabled = true;
-            this.comboWdj.Location = new System.Drawing.Point(197, 2);
-            this.comboWdj.Name = "comboWdj";
-            this.comboWdj.Size = new System.Drawing.Size(121, 20);
             this.comboWdj.Location = new System.Drawing.Point(472, 2);
             this.comboWdj.Name = "comboWdj";
             this.comboWdj.Size = new System.Drawing.Size(140, 21);
@@ -218,9 +192,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(150, 5);
+            this.label1.Location = new System.Drawing.Point(418, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(49, 14);
             this.label1.TabIndex = 4;
             this.label1.Text = "分类：";
             // 
@@ -240,42 +214,31 @@
             this.panel1.Size = new System.Drawing.Size(226, 31);
             this.panel1.TabIndex = 6;
             // 
-            // lb_pre_user
-            // 
-            this.lb_pre_user.AutoSize = true;
-            this.lb_pre_user.Location = new System.Drawing.Point(29, 10);
-            this.lb_pre_user.Name = "lb_pre_user";
-            this.lb_pre_user.Size = new System.Drawing.Size(65, 12);
-            this.lb_pre_user.TabIndex = 0;
-            this.lb_pre_user.Text = "当前用户：";
-            // 
             // lb_pre_username
             // 
             this.lb_pre_username.AutoSize = true;
             this.lb_pre_username.Location = new System.Drawing.Point(117, 9);
             this.lb_pre_username.Name = "lb_pre_username";
-            this.lb_pre_username.Size = new System.Drawing.Size(41, 12);
+            this.lb_pre_username.Size = new System.Drawing.Size(49, 14);
             this.lb_pre_username.TabIndex = 1;
             this.lb_pre_username.Text = "label3";
             // 
-            // Form1
+            // lb_pre_user
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 524);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.treeView1);
-            this.label1.Location = new System.Drawing.Point(418, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 14);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "分类：";
+            this.lb_pre_user.AutoSize = true;
+            this.lb_pre_user.Location = new System.Drawing.Point(29, 10);
+            this.lb_pre_user.Name = "lb_pre_user";
+            this.lb_pre_user.Size = new System.Drawing.Size(77, 14);
+            this.lb_pre_user.TabIndex = 0;
+            this.lb_pre_user.Text = "当前用户：";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 568);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboWdj);
             this.Controls.Add(this.stsWdj);
