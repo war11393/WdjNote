@@ -2,10 +2,11 @@
 
 namespace Interface
 {
-    interface IUserOperate
+    public interface IUserOperate
     {
         User Login(string username, string password);
-        void Regist(string username, string password, string nickname);
-        void UpdateInfo(User u);
+        User FindUserByUsername(string name);
+        User Regist(string username, string password, string nickname);
+        int UpdateInfo(User u);
     }
 }
