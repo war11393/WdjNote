@@ -38,6 +38,8 @@
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.团队介绍ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.软件版本ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.修改信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rtbWdj = new System.Windows.Forms.RichTextBox();
             this.stsWdj = new System.Windows.Forms.StatusStrip();
             this.tssWdj1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -52,8 +54,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_pre_username = new System.Windows.Forms.Label();
             this.lb_pre_user = new System.Windows.Forms.Label();
-            this.用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.修改信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.stsWdj.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -61,6 +61,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.文件ToolStripMenuItem,
@@ -133,6 +134,20 @@
             this.软件版本ToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
             this.软件版本ToolStripMenuItem.Text = "软件版本";
             // 
+            // 用户ToolStripMenuItem
+            // 
+            this.用户ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.修改信息ToolStripMenuItem});
+            this.用户ToolStripMenuItem.Name = "用户ToolStripMenuItem";
+            this.用户ToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.用户ToolStripMenuItem.Text = "用户";
+            // 
+            // 修改信息ToolStripMenuItem
+            // 
+            this.修改信息ToolStripMenuItem.Name = "修改信息ToolStripMenuItem";
+            this.修改信息ToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
+            this.修改信息ToolStripMenuItem.Text = "修改信息";
+            // 
             // rtbWdj
             // 
             this.rtbWdj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -195,7 +210,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(358, 10);
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(358, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 14);
             this.label1.TabIndex = 4;
@@ -210,11 +226,12 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.lb_pre_username);
             this.panel1.Controls.Add(this.lb_pre_user);
             this.panel1.Location = new System.Drawing.Point(594, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(226, 31);
+            this.panel1.Size = new System.Drawing.Size(226, 27);
             this.panel1.TabIndex = 6;
             // 
             // lb_pre_username
@@ -234,20 +251,6 @@
             this.lb_pre_user.Size = new System.Drawing.Size(77, 14);
             this.lb_pre_user.TabIndex = 0;
             this.lb_pre_user.Text = "当前用户：";
-            // 
-            // 用户ToolStripMenuItem
-            // 
-            this.用户ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.修改信息ToolStripMenuItem});
-            this.用户ToolStripMenuItem.Name = "用户ToolStripMenuItem";
-            this.用户ToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
-            this.用户ToolStripMenuItem.Text = "用户";
-            // 
-            // 修改信息ToolStripMenuItem
-            // 
-            this.修改信息ToolStripMenuItem.Name = "修改信息ToolStripMenuItem";
-            this.修改信息ToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
-            this.修改信息ToolStripMenuItem.Text = "修改信息";
             // 
             // Form1
             // 
