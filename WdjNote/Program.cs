@@ -3,7 +3,6 @@ using System.Windows.Forms;
 using Model;
 using Control;
 using Interface;
-using Model;
 namespace WdjNote
 {
     class Program
@@ -14,14 +13,14 @@ namespace WdjNote
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Form1 f = new Form1();
-           FileOperator fileOperate = new FileOprator();
+            IFileOperate fileOperate = new FileOperate();
             f.of += fileOperate.OpenFileToString;
             f.sf += fileOperate.SaveFile;
             Application.Run(f);
         }
         
         //展示实验二菜单
-        private static void ShowExperiment2()
+        /*private static void ShowExperiment2()
         {
             Show02.ShowMainMenu();
             int i = int.Parse(System.Console.ReadLine());
@@ -87,6 +86,6 @@ namespace WdjNote
                     Console.WriteLine("请输入正确指令！");
                     break;
             }
-        }
+        }*/
     }
 }

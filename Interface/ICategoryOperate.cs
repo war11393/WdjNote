@@ -11,6 +11,6 @@ namespace Interface
         //通过默认的根目录(D:\\WdjNote\\用户名)返回分类列表，返回失败就通过弹窗让用户指定路径
         List<string> GetCategory(string username);
         //通过用户指定的根目录返回分类列表，暂时不实现
-        List<string> GetCategory(string path);
+        List<string> GetCategoryByUser(string path);
     }
 }

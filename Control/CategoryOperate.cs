@@ -59,7 +59,7 @@ namespace Control
         }
 
         //通过用户指定的根目录返回分类列表
-        public List<string> GetCategory(string path)
+        public List<string> GetCategoryByUser(string path)
         {
             throw new NotImplementedException();
         }
