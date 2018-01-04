@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_regist = new System.Windows.Forms.Button();
-            this.btn_login = new System.Windows.Forms.Button();
-            this.username = new System.Windows.Forms.Label();
-            this.password = new System.Windows.Forms.Label();
-            this.repassword = new System.Windows.Forms.Label();
-            this.nick = new System.Windows.Forms.Label();
-            this.tb_username = new System.Windows.Forms.TextBox();
-            this.tb_password = new System.Windows.Forms.TextBox();
-            this.tb_repassword = new System.Windows.Forms.TextBox();
             this.tb_nick = new System.Windows.Forms.TextBox();
+            this.tb_repassword = new System.Windows.Forms.TextBox();
+            this.tb_password = new System.Windows.Forms.TextBox();
+            this.tb_username = new System.Windows.Forms.TextBox();
+            this.nick = new System.Windows.Forms.Label();
+            this.repassword = new System.Windows.Forms.Label();
+            this.password = new System.Windows.Forms.Label();
+            this.username = new System.Windows.Forms.Label();
+            this.btn_login = new System.Windows.Forms.Button();
+            this.btn_regist = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,50 +61,33 @@
             this.panel1.Size = new System.Drawing.Size(261, 287);
             this.panel1.TabIndex = 0;
             // 
-            // btn_regist
+            // tb_nick
             // 
-            this.btn_regist.Location = new System.Drawing.Point(45, 247);
-            this.btn_regist.Name = "btn_regist";
-            this.btn_regist.Size = new System.Drawing.Size(75, 23);
-            this.btn_regist.TabIndex = 0;
-            this.btn_regist.Text = "注册";
-            this.btn_regist.UseVisualStyleBackColor = true;
+            this.tb_nick.Location = new System.Drawing.Point(140, 194);
+            this.tb_nick.Name = "tb_nick";
+            this.tb_nick.Size = new System.Drawing.Size(100, 21);
+            this.tb_nick.TabIndex = 9;
             // 
-            // btn_login
+            // tb_repassword
             // 
-            this.btn_login.Location = new System.Drawing.Point(165, 247);
-            this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(75, 23);
-            this.btn_login.TabIndex = 1;
-            this.btn_login.Text = "登录";
-            this.btn_login.UseVisualStyleBackColor = true;
+            this.tb_repassword.Location = new System.Drawing.Point(140, 140);
+            this.tb_repassword.Name = "tb_repassword";
+            this.tb_repassword.Size = new System.Drawing.Size(100, 21);
+            this.tb_repassword.TabIndex = 8;
             // 
-            // username
+            // tb_password
             // 
-            this.username.AutoSize = true;
-            this.username.Location = new System.Drawing.Point(59, 53);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(41, 12);
-            this.username.TabIndex = 2;
-            this.username.Text = "用户名";
+            this.tb_password.Location = new System.Drawing.Point(140, 90);
+            this.tb_password.Name = "tb_password";
+            this.tb_password.Size = new System.Drawing.Size(100, 21);
+            this.tb_password.TabIndex = 7;
             // 
-            // password
+            // tb_username
             // 
-            this.password.AutoSize = true;
-            this.password.Location = new System.Drawing.Point(59, 100);
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(29, 12);
-            this.password.TabIndex = 3;
-            this.password.Text = "密码";
-            // 
-            // repassword
-            // 
-            this.repassword.AutoSize = true;
-            this.repassword.Location = new System.Drawing.Point(59, 150);
-            this.repassword.Name = "repassword";
-            this.repassword.Size = new System.Drawing.Size(53, 12);
-            this.repassword.TabIndex = 4;
-            this.repassword.Text = "确认密码";
+            this.tb_username.Location = new System.Drawing.Point(140, 43);
+            this.tb_username.Name = "tb_username";
+            this.tb_username.Size = new System.Drawing.Size(100, 21);
+            this.tb_username.TabIndex = 6;
             // 
             // nick
             // 
@@ -115,33 +98,51 @@
             this.nick.TabIndex = 5;
             this.nick.Text = "昵称";
             // 
-            // tb_username
+            // repassword
             // 
-            this.tb_username.Location = new System.Drawing.Point(140, 43);
-            this.tb_username.Name = "tb_username";
-            this.tb_username.Size = new System.Drawing.Size(100, 21);
-            this.tb_username.TabIndex = 6;
+            this.repassword.AutoSize = true;
+            this.repassword.Location = new System.Drawing.Point(59, 150);
+            this.repassword.Name = "repassword";
+            this.repassword.Size = new System.Drawing.Size(53, 12);
+            this.repassword.TabIndex = 4;
+            this.repassword.Text = "确认密码";
             // 
-            // tb_password
+            // password
             // 
-            this.tb_password.Location = new System.Drawing.Point(140, 90);
-            this.tb_password.Name = "tb_password";
-            this.tb_password.Size = new System.Drawing.Size(100, 21);
-            this.tb_password.TabIndex = 7;
+            this.password.AutoSize = true;
+            this.password.Location = new System.Drawing.Point(59, 100);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(29, 12);
+            this.password.TabIndex = 3;
+            this.password.Text = "密码";
             // 
-            // tb_repassword
+            // username
             // 
-            this.tb_repassword.Location = new System.Drawing.Point(140, 140);
-            this.tb_repassword.Name = "tb_repassword";
-            this.tb_repassword.Size = new System.Drawing.Size(100, 21);
-            this.tb_repassword.TabIndex = 8;
+            this.username.AutoSize = true;
+            this.username.Location = new System.Drawing.Point(59, 53);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(41, 12);
+            this.username.TabIndex = 2;
+            this.username.Text = "用户名";
             // 
-            // tb_nick
+            // btn_login
             // 
-            this.tb_nick.Location = new System.Drawing.Point(140, 194);
-            this.tb_nick.Name = "tb_nick";
-            this.tb_nick.Size = new System.Drawing.Size(100, 21);
-            this.tb_nick.TabIndex = 9;
+            this.btn_login.Location = new System.Drawing.Point(165, 247);
+            this.btn_login.Name = "btn_login";
+            this.btn_login.Size = new System.Drawing.Size(75, 23);
+            this.btn_login.TabIndex = 1;
+            this.btn_login.Text = "登录";
+            this.btn_login.UseVisualStyleBackColor = true;
+            // 
+            // btn_regist
+            // 
+            this.btn_regist.Location = new System.Drawing.Point(45, 247);
+            this.btn_regist.Name = "btn_regist";
+            this.btn_regist.Size = new System.Drawing.Size(75, 23);
+            this.btn_regist.TabIndex = 0;
+            this.btn_regist.Text = "注册";
+            this.btn_regist.UseVisualStyleBackColor = true;
+            this.btn_regist.Click += new System.EventHandler(this.btn_regist_Click);
             // 
             // pictureBox1
             // 

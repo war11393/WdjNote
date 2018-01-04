@@ -7,20 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SQLDAL;
-using Interface;
+
 namespace WdjNote
 {
-    public partial class register : Form
+    public partial class updateMess : Form
     {
-        public register()
+        public updateMess()
         {
             InitializeComponent();
-        }
-
-        private void btn_regist_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
