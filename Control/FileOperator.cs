@@ -82,7 +82,7 @@ namespace Control
         {
             File.Move(f.Name, newpath);
             File.Move(f.Path + "\\" + f.Name, newpath);
-        }
+        } 
 
        // 文件类型互转
         public SFile MyFileToSFile(MyFile f)

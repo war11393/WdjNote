@@ -82,6 +82,8 @@ namespace WdjNote
                 TreeNode node = new TreeNode(clist[j].Cname.Trim(), childNodes);
                 node.Tag = clist[j].Cno;
                 treeView1.Nodes.Add(node);
+                if (j == 0)
+                    treeView1.SelectedNode = node;
             }
 
             //添加新建选项
@@ -105,7 +107,7 @@ namespace WdjNote
                 myFile.Path = currentPath;
                 myFile.Name = sf.Fname.Trim() + ".txt";
                 myFile.Content = sf.Fcontent.Trim();
-                tssWdj1.Text = myFile.Name;
+                tssWdj1.Text = sf.Fname.Trim();
             }
             else//点击分类
             {
@@ -156,26 +158,39 @@ namespace WdjNote
         //保存文件
         private void 保存文件ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            sfdWdj.Filter = ("文本文件（*.txt)|*.txt|所有文件(*.*)|*.*）");
-
-            if (!Directory.Exists(currentPath))
-                Directory.CreateDirectory(currentPath);
-            sfdWdj.InitialDirectory = currentPath;
-            sfdWdj.FileName = tssWdj1.Text;
-
-            if (sfdWdj.ShowDialog() == DialogResult.OK)
+            if (CanSave())
             {
-                myFile.Content = rtbWdj.Text;
-                sf(myFile);//调用保存文件事件
+                sfdWdj.Filter = ("文本文件（*.txt)|*.txt|所有文件(*.*)|*.*）");
+
+                if (!Directory.Exists(currentPath))
+                    Directory.CreateDirectory(currentPath);
+                sfdWdj.InitialDirectory = currentPath;
+                sfdWdj.FileName = tssWdj1.Text;
+
+                if (sfdWdj.ShowDialog() == DialogResult.OK)
+                {
+                    myFile.Content = rtbWdj.Text;
+                    sf(myFile);//调用保存文件事件
+                }
+            }
+            else
+            {
+                MessageBox.Show("请先打开或新建一个笔记！");
             }
         }
 
         //保存到数据库
         private void 上传到云端ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SFile sf = new SFile(0, tssWdj1.Text, rtbWdj.Text, category.Cno, user.Uno);
-            fo.SaveFile(sf);
-            LoadData();
+            if (CanSave())
+            {
+                SFile sf = new SFile(0, tssWdj1.Text, rtbWdj.Text, category.Cno, user.Uno);
+                fo.SaveFile(sf);
+                MessageBox.Show("上传成功！");
+                LoadData();
+            }
+            else
+                MessageBox.Show("请先打开或新建一个笔记！");
         }
 
         //下拉条选中状态改变
@@ -202,11 +217,17 @@ namespace WdjNote
         //弹出添加分类框
         private void AddCategory()
         {
-            string str = Interaction.InputBox("新建一个分类", "新建分类", "请输入新的分类名", -1, -1);
-            if (str.Length <= 6 && str != "新建分类")
+            string str = Interaction.InputBox("新建一个分类(长度最长为6，输入的分类名将会被截取前6个字)", "新建分类", "请输入新的分类名", -1, -1);
+            if (str.Length > 6)
+                str = str.Substring(0, 6);
+            if (str != "新建分类")
             {
                 co.AddCategory(user.Uno, str);
                 LoadData();
+            }
+            else if(str == "新建分类")
+            {
+                MessageBox.Show("无效的分类名！");
             }
             else
             {
@@ -241,11 +262,86 @@ namespace WdjNote
         private void 新建文件ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tssWdj1.Text = Interaction.InputBox("新建一个笔记(笔记名最长为6，长出部分将会切除)", "新建笔记", "请输入笔记名", -1, -1);
-            tssWdj1.Text = tssWdj1.Text.Substring(0, 6);
+            if(tssWdj1.Text.Length > 6)
+                tssWdj1.Text = tssWdj1.Text.Substring(0, 6);
             rtbWdj.Text = "";
             myFile = new MyFile();
             myFile.Name = tssWdj1.Text + ".txt";
             myFile.Path = currentPath;
+        }
+
+        //判断是否可以保存
+        private Boolean CanSave()
+        {
+            if (tssWdj1.Text == "")
+                return false;
+            else
+                return true;
+        }
+
+        //删除选中的树列表节点
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TreeNode node = treeView1.SelectedNode;
+            if(node.Text == "新建分类")
+            {
+                return;
+            }
+            if(node.Nodes.Count != 0)
+            {
+                DialogResult dr = MessageBox.Show("将要同时删除此分类下的笔记！", "警告", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    foreach (TreeNode n in node.Nodes)
+                    {
+                        fo.DeleteFile(Convert.ToInt32(n.Tag.ToString()));
+                    }
+                    co.DeleteCategory(Convert.ToInt32(node.Tag.ToString()));
+                    LoadData();
+                }
+            }
+            else if (node.Level == 0)
+            {
+                DialogResult dr = MessageBox.Show("确认删除此分类：" + node.Text, "提醒", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    co.DeleteCategory(Convert.ToInt32(node.Tag.ToString()));
+                    LoadData();
+                }
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("确认删除此笔记：" + node.Text, "提醒", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    fo.DeleteFile(Convert.ToInt32(node.Tag.ToString()));
+                    LoadData();
+                }
+            }
+        }
+
+        private void 修改信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            updateMess update = new updateMess(user);
+            update.Show();
+        }
+        //修改信息后更新本窗口信息
+        public void UpdateName()
+        {
+            user = Program.user;
+            lb_pre_username.Text = user.Unikename.Trim();
+        }
+
+        private void 团队介绍ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("队伍名：豌豆荚（Wdj-王杜江）\n" +
+                "团队成员：王伟、杜意权、江学才\n" +
+                "更新日期：2018年1月4日", "团队介绍", MessageBoxButtons.OK);
+        }
+
+        private void 软件版本ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Version:1.8.0", "版本信息", MessageBoxButtons.OK);
         }
     }
 }

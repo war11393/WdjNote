@@ -7,14 +7,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Interface;
+using SQLDAL;
+using Model;
 namespace WdjNote
 {
     public partial class updateMess : Form
     {
-        public updateMess()
+        User user;
+
+        public updateMess(User user)
         {
             InitializeComponent();
+            this.user = user;
+            lb_username.Text = user.Uname.Trim();
+        }
+
+        private void btn_sure_Click(object sender, EventArgs e)
+        {
+            //获取用户的唯一标识符
+            int number = Program.user.Uno;
+            //获取窗体中的信息
+            string username = lb_username.Text.ToString();
+            string password = tb_password.Text.ToString();
+            string nick = tb_nickname.Text.ToString();
+            //调用接口实现类
+            IUserOperate userOperate = new UserOperateImpl();
+            //封装对象
+            User user = new User(number, username, nick);
+            user.Upass = password;
+            //修改信息，返回受影响的条数
+            int m = userOperate.UpdateInfo(user);
+            if (m > 0)
+            {//如果大于0表明修改成功否则失败
+                DialogResult dr = MessageBox.Show("修改成功！", "OK", MessageBoxButtons.OK);
+                if (dr == DialogResult.OK)
+                {
+                    user.Upass = "";
+                    Program.user = user;
+                    Program.form.UpdateName();
+                    Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("修改失败！");
+            }
         }
     }
 }
