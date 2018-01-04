@@ -6,7 +6,7 @@ using System;
 
 namespace SQLDAL
 {
-    class SQLFileOperateImpl : ISQLFileOperate
+    public class SQLFileOperateImpl : ISQLFileOperate
     {
         public SFile OpenFile(int fno)
         {
@@ -14,9 +14,9 @@ namespace SQLDAL
             DataTable dt = SQLOperate.QueryTable(sql);
 
             SFile sf = null;
-            if(dt != null)
+            if(dt.Rows.Count > 0)
                 sf = new SFile(Convert.ToInt32(dt.Rows[0][0].ToString()),
-                    dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(),
+                    dt.Rows[0][1].ToString().Trim(), dt.Rows[0][2].ToString().Trim(),
                     Convert.ToInt32(dt.Rows[0][3].ToString()),
                     Convert.ToInt32(dt.Rows[0][4].ToString()));
 
@@ -32,7 +32,7 @@ namespace SQLDAL
             for(int i = 0; i < dt.Rows.Count; i++)
             {
                 SFile sf = new SFile(Convert.ToInt32(dt.Rows[i][0].ToString()),
-                    dt.Rows[i][1].ToString(), dt.Rows[i][2].ToString(),
+                    dt.Rows[i][1].ToString().Trim(), dt.Rows[i][2].ToString().Trim(),
                     Convert.ToInt32(dt.Rows[i][3].ToString()),
                     Convert.ToInt32(dt.Rows[i][4].ToString()));
                 sfList.Add(sf);
@@ -43,8 +43,8 @@ namespace SQLDAL
 
         public int SaveFile(SFile f)
         {
-            string sql = "insert into cate values(null," + f.Fname + "," + f.Fcontent
-                + "," + f.Fcno + "," + f.Funo + ")";
+            string sql = "insert into userfile(fname,fcontent,fcno,funo) values('" + f.Fname + "','" + f.Fcontent
+                + "','" + f.Fcno + "','" + f.Funo + "')";
             return SQLOperate.ExecuteSql(sql);
         }
 
@@ -57,12 +57,12 @@ namespace SQLDAL
         public MyFile SFileToMyFile(SFile sf, string username)
         {
             string sql = "select * from cate where cno = " + sf.Fcno;
-            string cateName = SQLOperate.QueryTable(sql).Rows[0][2].ToString();
+            string cateName = SQLOperate.QueryTable(sql).Rows[0][2].ToString().Trim();
 
             MyFile mf = new MyFile();
             mf.Path = "D:\\WdjNote\\" + username + "\\" + cateName; 
-            mf.Name = sf.Fname + ".txt";
-            mf.Content = sf.Fcontent;
+            mf.Name = sf.Fname.Trim() + ".txt";
+            mf.Content = sf.Fcontent.Trim();
             return mf;
         }
     }

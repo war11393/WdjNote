@@ -15,15 +15,13 @@ namespace WdjNote
         public event OpenFile of;
 
         CategoryOperate category = new CategoryOperate();
-        public Form1()
+
+        private User user;
+
+        public Form1(User user)
         {
             InitializeComponent();
-            tssWdj2.Text = System.DateTime.Now.ToString();
-            foreach(string s in category.notelist){
-                comboWdj.Items.Add(s);
-            }
-            comboWdj.Items.Add("新建分类");
-            comboWdj.SelectedIndex = 0;
+            this.user = user;
         }
 
         private void ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,13 +112,35 @@ namespace WdjNote
 
         private void Form1_Load(object sender, EventArgs e)
         {
-             
+            if(user == null)
+            {
+                login lo = new login();
+                Hide();
+                lo.Show();
+            }
+            else
+            {
+                lb_pre_username.Text = user.Unikename;
+                tssWdj2.Text = System.DateTime.Now.ToString();
+                
+                foreach (string s in category.notelist)
+                {
+                    comboWdj.Items.Add(s);
+                }
+                comboWdj.Items.Add("新建分类");
+                comboWdj.SelectedIndex = 0;
+            }
         }
 
 
         private void tssWdj2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Program.lo.Close();
         }
     }
 }

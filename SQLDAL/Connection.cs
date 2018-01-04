@@ -11,7 +11,8 @@ namespace SQLDAL
 
         static string GetConnString()
         {
-            return System.Configuration.ConfigurationManager.AppSettings["connString"];
+            string connstring = "Data Source=DESKTOP-RJRT34C\\TURINGWEISQL;Initial Catalog=wdjnote;Integrated Security=True";// System.Configuration.ConfigurationManager.AppSettings["connString"];
+            return connstring;
         }
     }
 }

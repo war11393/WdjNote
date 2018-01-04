@@ -52,6 +52,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_pre_username = new System.Windows.Forms.Label();
             this.lb_pre_user = new System.Windows.Forms.Label();
+            this.用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.修改信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.stsWdj.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -63,7 +65,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.文件ToolStripMenuItem,
             this.格式ToolStripMenuItem,
-            this.帮助ToolStripMenuItem});
+            this.帮助ToolStripMenuItem,
+            this.用户ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -135,9 +138,9 @@
             this.rtbWdj.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbWdj.Location = new System.Drawing.Point(0, 30);
+            this.rtbWdj.Location = new System.Drawing.Point(164, 38);
             this.rtbWdj.Name = "rtbWdj";
-            this.rtbWdj.Size = new System.Drawing.Size(859, 510);
+            this.rtbWdj.Size = new System.Drawing.Size(695, 502);
             this.rtbWdj.TabIndex = 1;
             this.rtbWdj.Text = "";
             this.rtbWdj.TextChanged += new System.EventHandler(this.rtbWdj_TextChanged);
@@ -183,7 +186,7 @@
             // comboWdj
             // 
             this.comboWdj.FormattingEnabled = true;
-            this.comboWdj.Location = new System.Drawing.Point(472, 2);
+            this.comboWdj.Location = new System.Drawing.Point(413, 7);
             this.comboWdj.Name = "comboWdj";
             this.comboWdj.Size = new System.Drawing.Size(140, 21);
             this.comboWdj.TabIndex = 3;
@@ -192,7 +195,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(418, 5);
+            this.label1.Location = new System.Drawing.Point(358, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 14);
             this.label1.TabIndex = 4;
@@ -200,16 +203,16 @@
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(12, 28);
+            this.treeView1.Location = new System.Drawing.Point(14, 38);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(149, 471);
+            this.treeView1.Size = new System.Drawing.Size(149, 502);
             this.treeView1.TabIndex = 5;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.lb_pre_username);
             this.panel1.Controls.Add(this.lb_pre_user);
-            this.panel1.Location = new System.Drawing.Point(499, 0);
+            this.panel1.Location = new System.Drawing.Point(594, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(226, 31);
             this.panel1.TabIndex = 6;
@@ -217,7 +220,7 @@
             // lb_pre_username
             // 
             this.lb_pre_username.AutoSize = true;
-            this.lb_pre_username.Location = new System.Drawing.Point(117, 9);
+            this.lb_pre_username.Location = new System.Drawing.Point(136, 10);
             this.lb_pre_username.Name = "lb_pre_username";
             this.lb_pre_username.Size = new System.Drawing.Size(49, 14);
             this.lb_pre_username.TabIndex = 1;
@@ -231,6 +234,20 @@
             this.lb_pre_user.Size = new System.Drawing.Size(77, 14);
             this.lb_pre_user.TabIndex = 0;
             this.lb_pre_user.Text = "当前用户：";
+            // 
+            // 用户ToolStripMenuItem
+            // 
+            this.用户ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.修改信息ToolStripMenuItem});
+            this.用户ToolStripMenuItem.Name = "用户ToolStripMenuItem";
+            this.用户ToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.用户ToolStripMenuItem.Text = "用户";
+            // 
+            // 修改信息ToolStripMenuItem
+            // 
+            this.修改信息ToolStripMenuItem.Name = "修改信息ToolStripMenuItem";
+            this.修改信息ToolStripMenuItem.Size = new System.Drawing.Size(164, 24);
+            this.修改信息ToolStripMenuItem.Text = "修改信息";
             // 
             // Form1
             // 
@@ -248,6 +265,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -285,5 +303,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lb_pre_username;
         private System.Windows.Forms.Label lb_pre_user;
+        private System.Windows.Forms.ToolStripMenuItem 用户ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 修改信息ToolStripMenuItem;
     }
 }

@@ -6,11 +6,11 @@ using System;
 
 namespace SQLDAL
 {
-    class SQLCategoryOperateImpl : ISQLCategoryOperate
+    public class SQLCategoryOperateImpl : ISQLCategoryOperate
     {
         public void AddCategory(int uno, string name)
         {
-            string sql = "insert into cate values(null, " + uno + "," + name + ")";
+            string sql = "insert into cate(cuno,cname) values('" + uno + "','" + name + "')";
             SQLOperate.ExecuteSql(sql);
         }
 
@@ -30,7 +30,7 @@ namespace SQLDAL
             {
                 Category c = new Category(Convert.ToInt32(dt.Rows[i][0].ToString()),
                     Convert.ToInt32(dt.Rows[i][1].ToString()),
-                    dt.Rows[i][2].ToString());
+                    dt.Rows[i][2].ToString().Trim());
                 clist.Add(c);
             }
 

@@ -5,19 +5,19 @@ using Model;
 
 namespace SQLDAL
 {
-    class UserOperateImpl : IUserOperate
+    public class UserOperateImpl : IUserOperate
     {
         public User FindUserByUsername(string name)
         {
-            string sql = "select * from wdjuser where uname = " + name;
+            string sql = "select * from wdjuser where uname = '" + name + "'";
             DataTable dt = SQLOperate.QueryTable(sql);
 
             User u = null;
-            if(dt != null)
+            if(dt.Rows.Count > 0)
             {
                 u = new User(Convert.ToInt32(dt.Rows[0][0].ToString()),
                     dt.Rows[0][1].ToString(), dt.Rows[0][3].ToString());
-                u.Upass = dt.Rows[0][3].ToString();
+                u.Upass = dt.Rows[0][2].ToString();
             }
 
             return u;
@@ -29,7 +29,7 @@ namespace SQLDAL
 
             if(u != null)
             {
-                if(password != u.Upass)
+                if(password != u.Upass.Trim())
                 {
                     return null;
                 } else
@@ -53,19 +53,20 @@ namespace SQLDAL
             }
             else
             {
-                string sql = "insert into wdjuser values(null," + username + "," + password
-                    + "," + nickname + ")";
+                string sql = "insert into wdjuser(uname,upass,unikename) values('" + username + "','" + password
+                    + "','" + nickname + "')";
                 SQLOperate.ExecuteSql(sql);
                 u = FindUserByUsername(username);
-                u.Upass = "";
+                if(u != null)
+                    u.Upass = "";
                 return u;
             }
         }
 
         public int UpdateInfo(User u)
         {
-            string sql = "update wdjuser set upass=" + u.Upass
-                    + ",unikename" + u.Unikename;
+            string sql = "update wdjuser set upass='" + u.Upass
+                    + "',unikename='" + u.Unikename + "'";
             return SQLOperate.ExecuteSql(sql);
         }
     }

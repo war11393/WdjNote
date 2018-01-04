@@ -7,16 +7,27 @@ namespace WdjNote
 {
     class Program
     {
+        public static User user = null;
+        public static login lo = null;
+        public static Form1 form = null;
+
         [STAThread]
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form1 f = new Form1();
+
+            lo = new login();
+            Application.Run(lo);
+        }
+
+        public static void StartMainForm()
+        {
+            form = new Form1(user);
             IFileOperate fileOperate = new FileOperate();
-            f.of += fileOperate.OpenFileToString;
-            f.sf += fileOperate.SaveFile;
-            Application.Run(f);
+            form.of += fileOperate.OpenFileToString;
+            form.sf += fileOperate.SaveFile;
+            form.Show();
         }
         
         //展示实验二菜单

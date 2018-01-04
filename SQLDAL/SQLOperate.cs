@@ -6,7 +6,7 @@ namespace SQLDAL
 {
     class SQLOperate
     {
-        static SqlConnection conn = Connection.GetConn();
+        static SqlConnection conn = null;
 
         /// <summary>
         /// 提交查询语句并以数据表返回
@@ -15,6 +15,7 @@ namespace SQLDAL
         /// <returns>查询得到的数据表</returns>
         public static DataTable QueryTable(string sql)
         {
+            conn = Connection.GetConn();
             DataTable dt = null;
             try
             {
@@ -42,6 +43,7 @@ namespace SQLDAL
         /// <returns>受影响的行数</returns>
         public static int ExecuteSql(string sql)
         {
+            conn = Connection.GetConn();
             int i = 0;
             try
             {

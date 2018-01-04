@@ -107,6 +107,10 @@
       <Project>{1e8be1f7-34bb-4561-a23d-0e510a5f5bab}</Project>
       <Name>Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SQLDAL\SQLDAL.csproj">
+      <Project>{95efa180-fc17-4f13-9b24-db6b6110a1be}</Project>
+      <Name>SQLDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\timg.jpg" />
