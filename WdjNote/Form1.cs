@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System.IO;
 using Microsoft.VisualBasic;
 using Model;
-
+using Control;
 namespace WdjNote
 {
     public partial class Form1 : Form
@@ -14,7 +14,7 @@ namespace WdjNote
         public delegate string OpenFile(string s);//委托--打开文件
         public event OpenFile of;
 
-        Category02 category = new Category02();
+        CategoryOperate category = new CategoryOperate();
         public Form1()
         {
             InitializeComponent();
@@ -102,7 +102,7 @@ namespace WdjNote
                    comboWdj.Items.Remove("新建分类");
                    comboWdj.Items.Add(str);
                    comboWdj.Items.Add("新建分类");
-                   category.AddCategory(str);
+                  // category.AddCategory(str);
                }
             }
         }
@@ -116,13 +116,11 @@ namespace WdjNote
         {
              
         }
-<<<<<<< HEAD
+
 
         private void tssWdj2_Click(object sender, EventArgs e)
         {
 
         }
-=======
->>>>>>> 79a961b16b97b3a97aaceabfaf4f5ddc10b55aae
     }
 }
